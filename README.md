@@ -1,68 +1,35 @@
-# Sentiment Analysis with LSTM on Movie Reviews
+# Sentiment Analysis with LSTM
 
-This project performs **sentiment analysis** on movie reviews using a **custom NLP pipeline** and a **Keras LSTM** model.
+This project demonstrates how to classify movie reviews as positive or negative using an LSTM-based neural network built with Keras.
 
----
+## 📌 Features
+- Data preprocessing with NLTK
+- Word embedding and padding
+- LSTM model implementation
+- Accuracy, Precision, Recall, F1 Score metrics
+- Confusion matrix visualization
+
+## 🚀 Tech Stack
+- Python 3.x
+- TensorFlow/Keras
+- Pandas, NumPy, NLTK
+- Scikit-learn
+
+## 📊 Results
+The model achieved satisfactory performance metrics on the test set. Evaluation outputs include classification report and confusion matrix.
+
+## 📷 Sample Output
+![Confusion Matrix](sentiment-analysis.png)
+
+## 🔧 How to Run
+1. Clone the repo  
+2. Install required packages 
+3. Run the notebook `Sentiment-Analysis-LSTM.ipynb`
 
 ## 📁 Dataset
+The dataset used (`movie_reviews.csv`) should contain at least two columns: `review` and `sentiment`.
 
-- File: `movie_reviews.csv`
-- Columns:
-  - `review` – Raw movie review text
-  - `sentiment` – Binary label (`positive` or `negative`)
-
-
-
----
-
-## 🧠 Model Architecture
-
-- Embedding Layer
-- SpatialDropout1D
-- LSTM Layer
-- Dense Output Layer (Sigmoid activation)
-
----
-
-## 🧹 Preprocessing
-
-1. **Text Cleaning**
-   - Remove HTML tags
-   - Remove non-alphabetic characters
-   - Lowercasing
-   - Stopword removal (`nltk.stopwords`)
-2. **Tokenization**
-   - Custom tokenization (splitting on space)
-3. **Vocabulary Mapping**
-   - Built from training data using `collections.Counter`
-4. **Sequence Padding**
-   - Manual `pad_sequences` from Keras
-
----
-
-## 🔧 Model Details
-
-- Embedding dimension: `128`
-- LSTM units: `64`
-- Dropout: `0.2`
-- Batch size: `100`
-- Epochs: `5`
-- Loss: `binary_crossentropy`
-- Optimizer: `adam`
-
----
-
-## 🧪 Evaluation Metrics
-
-After training, the model is evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
-- Classification Report
-
----
-
-
+## 💡 Future Improvements
+- Use pre-trained embeddings (e.g., GloVe)
+- Tune hyperparameters
+- Deploy via Streamlit or Flask
